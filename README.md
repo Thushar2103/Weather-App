@@ -9,7 +9,7 @@ This is a Flutter application that displays weather information using the OpenWe
 - Developed to run seamlessly on both Windows and mobile devices.
 
 ## Screenshots
-###Mobile
+### Mobile
 ![Mobile Screenshot](screenshots/mobile.png)
-###Windows
+### Windows
 ![Windows Screenshot](screenshots/windows.png)
