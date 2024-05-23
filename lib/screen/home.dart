@@ -48,8 +48,8 @@ class _WeatherAppState extends State<WeatherApp> {
     }
   }
 
-  double fahrenheitToCelsius(double fahrenheit) {
-    return (fahrenheit - 32) / 1.8;
+  double kelvinToCelsius(double kelvin) {
+    return kelvin - 273.15;
   }
 
   @override
@@ -119,6 +119,8 @@ class _WeatherAppState extends State<WeatherApp> {
                     String imagePath = weatherImageMap.containsKey(description)
                         ? weatherImageMap[description]!
                         : 'assets/cloud.png';
+                    final tempCelsius =
+                        kelvinToCelsius(snapshot.data!.temperature);
 
                     return Center(
                         child: ClipRRect(
@@ -173,7 +175,7 @@ class _WeatherAppState extends State<WeatherApp> {
                                             color: Colors.white, fontSize: 30),
                                       ),
                                       Text(
-                                        'Temperature: ${snapshot.data?.temperature.toStringAsFixed(1)}',
+                                        'Temperature: ${tempCelsius.toStringAsFixed(2)} °C',
                                         style: TextStyle(color: Colors.white),
                                       ),
                                       Text(
